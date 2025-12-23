@@ -5,31 +5,20 @@ const projects = [
   {
     id: 1,
     icon: 'star',
-    title: 'CIB on the Mobile',
+    title: 'Mobile development',
     description: 'Take your client onboard seamlessly by our amazing tool of digital onboard process.',
-    color: 'purple'
+    color: 'purple',
+    link: 'https://github.com/noorAlnablsi'
   },
   {
     id: 2,
     icon: 'lightbulb',
     title: 'CIB on the Mobile',
     description: 'Take your client onboard seamlessly by our amazing tool of digital onboard process.',
-    color: 'yellow'
+    color: 'yellow',
+    link: 'https://www.figma.com/design/eoZvbpcqZogoxLV0Rs8gJS/Portfolio-template---Edit-this-portfolio-and-export-it-as-HTML---Get-your-portfolio-live-in-no-time--Community-?t=zJc3EF2DyxUqVuqJ-0'
   },
-  {
-    id: 3,
-    icon: 'teacup',
-    title: 'CIB on the Mobile',
-    description: 'Take your client onboard seamlessly by our amazing tool of digital onboard process.',
-    color: 'purple'
-  },
-  {
-    id: 4,
-    icon: 'flask',
-    title: 'CIB on the Mobile',
-    description: 'Take your client onboard seamlessly by our amazing tool of digital onboard process.',
-    color: 'purple'
-  }
+  
 ]
 
 const IconComponent = ({ icon, color }) => {
@@ -92,7 +81,18 @@ function WorkExperience() {
             </div>
             <h3 className="project-title">{project.title}</h3>
             <p className="project-description">{project.description}</p>
-            <button className="learn-more-btn">LEARN MORE</button>
+            {project.link ? (
+              <a 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="learn-more-btn"
+              >
+                LEARN MORE
+              </a>
+            ) : (
+              <button className="learn-more-btn">LEARN MORE</button>
+            )}
           </div>
         ))}
       </div>
